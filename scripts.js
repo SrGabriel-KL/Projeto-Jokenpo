@@ -19,7 +19,7 @@ const playMachine = () => {
 
 const playTheGame = (human, machine) => {
 
-    result.classList.add("show") // MOSTRA A CAIXA
+    result.classList.add("show") 
 
     if (human === machine) {
         result.innerHTML = "Deu empate!"
@@ -44,15 +44,15 @@ const playTheGame = (human, machine) => {
 
 const checkWinner = () => {
 
-    if (humanScoreNumber === 10 || machineScoreNumber === 10) {
+    if (humanScoreNumber === 5 || machineScoreNumber === 5) {
 
         gameOver = true
 
-        result.classList.remove("show") // 👈 ESCONDE O RESULTADO
+        result.classList.remove("show") 
 
-        const winnerText = humanScoreNumber === 10
-            ? "🎉 PARABÉNS! VOCÊ GANHOU O JOGO!"
-            : "🤖 A MÁQUINA GANHOU O JOGO!"
+        const winnerText = humanScoreNumber === 5
+            ? "👑 PARABÉNS! VOCÊ GANHOU O JOGO!"
+            : "🔥👾🔥  O VILÃO GANHOU O JOGO!"
 
         const overlay = document.createElement("div")
         overlay.classList.add("winner-overlay")
@@ -79,3 +79,11 @@ const restartGame = () => {
 
     document.querySelector(".winner-overlay").remove()
 }
+
+const resultado = document.getElementById("resultado");
+
+document.querySelectorAll("button").forEach(botao => {
+  botao.addEventListener("click", () => {
+    resultado.innerText = " "; 
+  });
+});
